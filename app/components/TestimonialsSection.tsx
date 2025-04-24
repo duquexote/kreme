@@ -135,7 +135,7 @@ const TestimonialsSection = () => {
               className="flex transition-transform duration-500 ease-in-out"
               style={{ transform: `translateX(-${currentSlide * 100}%)` }}
             >
-              {testimonials.map((testimonial, index) => (
+              {testimonials.map((testimonial) => (
                 <div 
                   key={testimonial.id}
                   className="w-full flex-shrink-0 px-2 md:px-4"
