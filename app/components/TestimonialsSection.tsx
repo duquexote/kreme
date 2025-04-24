@@ -38,7 +38,6 @@ const TestimonialsSection = () => {
   const isInView = useInView(ref, { once: true, amount: 0.2 });
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
-  const [touchStartX, setTouchStartX] = useState(0);
   
   // Auto-advance slides
   useEffect(() => {
@@ -153,7 +152,7 @@ const TestimonialsSection = () => {
                       ))}
                     </div>
                     
-                    <p className="text-gray-700 mb-4 md:mb-6 text-base md:text-lg italic">"{testimonial.text}"</p>
+                    <p className="text-gray-700 mb-4 md:mb-6 text-base md:text-lg italic">&ldquo;{testimonial.text}&rdquo;</p>
                     
                     <div>
                       <p className="font-bold text-gray-900">{testimonial.author}</p>
@@ -167,16 +166,16 @@ const TestimonialsSection = () => {
           
           {/* Navigation dots */}
           <div className="flex justify-center mt-6 md:mt-8 space-x-2">
-            {testimonials.map((_, index: number) => (
+            {testimonials.map((_, i) => (
               <button
-                key={index}
-                onClick={() => goToSlide(index)}
+                key={i}
+                onClick={() => goToSlide(i)}
                 className={`w-2.5 h-2.5 md:w-3 md:h-3 rounded-full transition-all duration-300 ${
-                  currentSlide === index 
+                  currentSlide === i 
                     ? 'bg-green-600 w-5 md:w-6' 
                     : 'bg-gray-300'
                 }`}
-                aria-label={`Go to slide ${index + 1}`}
+                aria-label={`Go to slide ${i + 1}`}
               />
             ))}
           </div>

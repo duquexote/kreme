@@ -1,6 +1,5 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import Link from 'next/link';
+import React, { useRef } from 'react';
+import { motion, useInView } from 'framer-motion';
 import Image from 'next/image';
 
 const HeroSection = () => {
